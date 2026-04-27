@@ -813,7 +813,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.33}
+    oldSize: {x: 0.65, y: 0.9}
     newSize: {x: 0.66, y: 0.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -933,7 +933,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7468057293271108204, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
+  m_Sprite: {fileID: 1075993247170539406, guid: 7adfd148b36d55f4ca52fe40ca8fde5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -971,16 +971,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   walkSprites:
-  - {fileID: -4298345892085953899, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: 7468057293271108204, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: 2076983720127968420, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: -1842589531783952824, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: -1768044199346558973, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: 1164784180236137431, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: -6330212380425479180, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: -3087928711210884387, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: -4141618006047545035, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
-  - {fileID: 3498192974780148551, guid: 181a0fda269381e4f80d502e6fe11a00, type: 3}
+  - {fileID: 5459970975151247166, guid: 76ea355bd0bf5584086224097cb990e9, type: 3}
+  - {fileID: -9105183762160223654, guid: c248dbbd7523244469685a8de01fa51a, type: 3}
+  - {fileID: 604309364132295974, guid: aecfcd269f5c54a45abdb1fd72d41e74, type: 3}
   animationPeriod: 0.3
 --- !u!1 &2035834187
 GameObject:
