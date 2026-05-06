@@ -1,24 +1,32 @@
-using Tanks.Complete;
 using UnityEngine;
 
 public class BamsoniGenerator : MonoBehaviour
 {
-    public GameObject bamsongiPrefabs;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject bamsongiPrefab;
+    public float throwForce = 10f;
 
-    // Update is called once per frame
+    float startY;
+
     void Update()
     {
-        if (TankInputUser.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            GameObject bamsongi = instantitate(bamsongiPrefabs);
+            startY = Input.mousePosition.y;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            GameObject bamsongi = Instantiate(bamsongiPrefab);
             bamsongi.transform.position = transform.position;
-            //Vector3 dir = new Vector3(0, 200, 2000);
-            //bamsongi.GetComponent<BamsongiController>().Shoot(dir);
+
+            float power = Input.mousePosition.y - startY;
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            Vector3 dir = ray.direction * power * throwForce;
+
+            bamsongi.GetComponent<BamsongiController>().Shoot(dir);
         }
     }
 }
+

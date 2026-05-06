@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BamsongiController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public MeshRenderer renderer;
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -16,7 +16,10 @@ public class BamsongiController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        //renderer.enab
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<ParticleSystem>().Play();
+        Destroy(gameObject, 0.5f);
+
     }
 }
