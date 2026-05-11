@@ -9,14 +9,13 @@ public class BamsongiController : MonoBehaviour
         //Shoot(new Vector3(0, 200, 2000));
     }
 
-    // Update is called once per frame
     public void Shoot(Vector3 dir)
     {
         GetComponent<Rigidbody>().AddForce (dir);
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //renderer.enab
+         ////renderer.enab
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<ParticleSystem>().Play();
         Destroy(gameObject, 0.5f);
