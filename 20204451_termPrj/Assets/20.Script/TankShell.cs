@@ -13,10 +13,6 @@ public class TankShell : MonoBehaviour
     public GameObject shellExplosionPrefab;
     public float explosionLifeTime = 2f;
 
-    [Header("Audio")]
-    public AudioClip shellExplosionClip;
-    public float shellExplosionVolume = 1f;
-
     private GameObject owner;
 
     public void SetOwner(GameObject ownerTank)
@@ -40,11 +36,6 @@ public class TankShell : MonoBehaviour
             explosionPosition = collision.contacts[0].point;
         }
 
-        if (shellExplosionClip != null)
-        {
-            AudioSource.PlayClipAtPoint(shellExplosionClip, explosionPosition, shellExplosionVolume);
-        }
-
         CreateShellExplosion(explosionPosition);
         ApplyAreaDamage(explosionPosition);
 
@@ -53,13 +44,19 @@ public class TankShell : MonoBehaviour
 
     private void CreateShellExplosion(Vector3 position)
     {
-        if (shellExplosionPrefab == null) return;
+        if (shellExplosionPrefab == null)
+        {
+            Debug.LogWarning("Shell Explosion Prefab이 연결되지 않았습니다.");
+            return;
+        }
 
         GameObject effect = Instantiate(
             shellExplosionPrefab,
             position,
             Quaternion.identity
         );
+
+        Debug.Log("ShellExplosion 생성됨: " + shellExplosionPrefab.name);
 
         Destroy(effect, explosionLifeTime);
     }

@@ -18,10 +18,6 @@ public class TankHealth : MonoBehaviour
     public GameObject tankExplosionPrefab;
     public float explosionLifeTime = 3f;
 
-    [Header("Audio")]
-    public AudioClip tankExplosionClip;
-    public float tankExplosionVolume = 1f;
-
     private int currentHP;
     private bool isDead = false;
 
@@ -49,11 +45,6 @@ public class TankHealth : MonoBehaviour
         if (isDead) return;
 
         isDead = true;
-
-        if (tankExplosionClip != null)
-        {
-            AudioSource.PlayClipAtPoint(tankExplosionClip, transform.position, tankExplosionVolume);
-        }
 
         CreateTankExplosion();
 
@@ -83,13 +74,19 @@ public class TankHealth : MonoBehaviour
 
     private void CreateTankExplosion()
     {
-        if (tankExplosionPrefab == null) return;
+        if (tankExplosionPrefab == null)
+        {
+            Debug.LogWarning("Tank Explosion Prefab이 연결되지 않았습니다.");
+            return;
+        }
 
         GameObject effect = Instantiate(
             tankExplosionPrefab,
             transform.position,
             Quaternion.identity
         );
+
+        Debug.Log("TankExplosion 생성됨: " + tankExplosionPrefab.name);
 
         Destroy(effect, explosionLifeTime);
     }

@@ -178,7 +178,7 @@ MonoBehaviour:
   damage: 1
   hitRadius: 2.5
   lifeTime: 5
-  shellExplosionPrefab: {fileID: 195792, guid: 537afde59eeba4c82897def1dccfba0a, type: 3}
+  shellExplosionPrefab: {fileID: 195792, guid: e17eb07758778ad4daba25ed59494788, type: 3}
   explosionLifeTime: 2
   shellExplosionClip: {fileID: 8300000, guid: e55024e0797d8a94189ce15bd587ca8e, type: 3}
   shellExplosionVolume: 0.3
